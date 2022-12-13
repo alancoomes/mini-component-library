@@ -55,24 +55,24 @@ const BarWrapper = styled.div`
     border-radius: 4px;
 `;
 
-const Progress = styled.progress`
+// const Progress = styled.progress`
 
-  border-radius: var(--borderRadius); 
-  width: 370px;
+//   border-radius: var(--borderRadius); 
+//   width: 370px;
 
-&::-webkit-progress-bar {
-  background-color: ${COLORS.transparentGray15};
-  border-radius: var(--borderRadius);
-  padding: var(--innerPadding);
-  height: var(--height);
-  box-shadow: inset 0px 2px 4px ${COLORS.transparentGray35};
-}
-&::-webkit-progress-value {
-  background-color: ${COLORS.primary};
-  border-top-left-radius: var(--borderRadius);
-  border-bottom-left-radius: var(--borderRadius);
-}
-`;
+// &::-webkit-progress-bar {
+//   background-color: ${COLORS.transparentGray15};
+//   border-radius: var(--borderRadius);
+//   padding: var(--innerPadding);
+//   height: var(--height);
+//   box-shadow: inset 0px 2px 4px ${COLORS.transparentGray35};
+// }
+// &::-webkit-progress-value {
+//   background-color: ${COLORS.primary};
+//   border-top-left-radius: var(--borderRadius);
+//   border-bottom-left-radius: var(--borderRadius);
+// }
+// `;
 
 
 
