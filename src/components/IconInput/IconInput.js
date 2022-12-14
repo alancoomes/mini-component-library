@@ -16,7 +16,7 @@ const SIZES = {
   large: {
     '--bottomBorderSize': 2 + 'px',
     '--fontSize': 18/16 + 'rem',
-    '--height': (36/16) + 'rem',
+    '--height': 36/16 + 'rem',
     '--paddingLeft': 36 + 'px',
   }
 }

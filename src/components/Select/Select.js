@@ -10,35 +10,67 @@ const Select = ({ label, value, onChange, children }) => {
   const displayedValue = getDisplayedValue(value, children);
 
   return (
-    <SelectWrapper>
-      Newest Releases
-    <SelectHide value={value} onChange={onChange}>
-      {children}
-    </SelectHide>
-    <IconWrapper>
-    <Icon id='chevron-down'></Icon>
-    </IconWrapper>
-    </SelectWrapper>
+    <Wrapper>
+      <NativeSelect value={value} onChange={onChange}>
+        {children}
+      </NativeSelect>
+      <PresentationalBit>
+        {displayedValue}
+        <IconWrapper>
+        <Icon id='chevron-down' strokeWidth={1} size={24}></Icon>
+        </IconWrapper>
+      </PresentationalBit>
+    </Wrapper>
+
   );
 };
 
-const SelectWrapper = styled.div`
-  border: none;
-  background-color: ${COLORS.transparentGray15};
-  color: ${COLORS.gray700};
-  width: fit-content;
-  text-align: center;
+
+const Wrapper = styled.div`
+position: relative;
+width: max-content;
 `;
 
-const SelectHide = styled.select`
-opacity: 0;
+const NativeSelect = styled.select`
 position: absolute;
-z-index: 1;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+appearance: none;
+opacity: 0;
+`;
+
+const PresentationalBit = styled.div`
+  padding: 12px 16px;
+  color: ${COLORS.gray700};
+  background-color: ${COLORS.transparentGray15};
+  padding: 12px 52px 12px 16px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 400;
+
+  ${NativeSelect}:hover + & {
+    color: ${COLORS.black};
+  }
+
+  ${NativeSelect}:focus + & {
+    outline: 1px dotted #212121;
+    outline: 5px auto -webkit-focus-ring-color;
+  }
+
 `;
 
 const IconWrapper = styled.div`
-  display: inline-block;
-  font-weight: 900;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 10px;
+  margin: auto;
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
 `;
+
 
 export default Select;
